@@ -1,0 +1,11 @@
+# [START runtime]
+runtime: python
+env: flex
+entrypoint: gunicorn -b :$PORT WordChallenge.wsgi
+
+beta_settings:
+    cloud_sql_instances: fun-with-words:us-central1:instance1
+
+runtime_config:
+    python_version: 3
+# [END runtime]
