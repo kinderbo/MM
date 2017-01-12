@@ -1,9 +1,13 @@
+{% load static %}
+
 <html>
 <title>Word challenge</title>
 
-<head><link rel="stylesheet" href="Interface.css"></head>
-
-<script src="Interface.js"></script>
+<head>
+	<!-- <link rel="stylesheet" href="Interface.css"></head> -->
+	<link rel="stylesheet" type="text/css" href="{% static 'css/Interface.css' %}" />
+	<script type="text/javascript" src="{% static 'js/Interface.js' %}"></script>
+</head>
 
 <body>
 

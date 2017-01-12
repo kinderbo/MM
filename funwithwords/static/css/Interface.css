@@ -1,29 +1,28 @@
-
-
+/*{% load static %}*/
 
 body{
-	background-image: url("snowflakes.jpg");
+	background-image: url('/static/images/snowflakes.jpg');
+	/*background-image: url("{% static 'images/snowflakes.jpg' %}");*/
 	background-repeat: no-repeat;
 	background-size: 100%;
-
 }
 
 #let{
 		background: #72d2da;
 
 
-		
+
 }
 #input{
 	border-collapse: separate;
-	background:#E1C5EB; 
+	background:#E1C5EB;
 	font-size: 40px;
 	text-align: center;
 }
 
 #output{
 	border-collapse: separate;
-	background:#72d2da; 
+	background:#72d2da;
 	font-size: 40px;
 	text-align: center;
 }
@@ -91,7 +90,7 @@ body{
 	top: 550px;
 	left: 500px;
 	position: absolute;
-	
+
 }
 #shuffle{
 	top: 550px;
@@ -100,4 +99,3 @@ body{
 	position: absolute;
 
 }
-
