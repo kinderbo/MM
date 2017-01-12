@@ -1,0 +1,40 @@
+<html>
+<title>Word challenge</title>
+
+<head>
+	<link rel="stylesheet" href="Interface.css">
+</head>
+
+<script src="Interface.js"></script>
+
+<body>
+<div id="labels">
+	<label id="let"></label>
+</div>
+
+<div id="table">
+<table id="random" onkeypress="typeLetters(e)" >
+<tr>
+<td>_</td>
+</tr>
+</table>
+</div>
+
+<script>random()</script>
+
+<div id="start">
+<button onclick="myFunction('let')"> Start</button>
+</div>
+
+<div id="new">
+<button onclick>New</button>
+</div>
+<script>window.addEventListener("keyup", typeLetters, false)</script>
+<div id="shuffle">
+<button>Shuffle</button>
+</div>
+</body>
+
+
+
+</html>

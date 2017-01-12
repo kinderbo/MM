@@ -1,0 +1,49 @@
+
+
+
+body{
+	background-image: url("snowflakes.jpg");
+	background-repeat: no-repeat;
+	background-size: 100%;
+
+}
+
+#let{
+		background: #72d2da;
+
+
+		
+}
+td{
+	border-collapse: separate;
+	background:#72d2da; 
+	font-size: 40px;
+	text-align: center;
+	column-width: 50px;
+}
+#random{
+	top: 400px;
+	left: 270px;
+	border-spacing: 30px;
+	position: relative;
+}
+#start{
+	top: 550px;
+	left: 300px;
+	width: 100px;
+	position: absolute;
+}
+#new{
+	min-width: 50px;
+	top: 550px;
+	left: 500px;
+	position: absolute;
+	
+}
+#shuffle{
+	top: 550px;
+	left: 700px;
+	width: 50px;
+	position: absolute;
+
+}
