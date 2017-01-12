@@ -14,18 +14,71 @@ body{
 
 		
 }
-td{
+#input{
+	border-collapse: separate;
+	background:#E1C5EB; 
+	font-size: 40px;
+	text-align: center;
+}
+
+#output{
 	border-collapse: separate;
 	background:#72d2da; 
 	font-size: 40px;
 	text-align: center;
-	column-width: 50px;
 }
 #random{
-	top: 400px;
+
+	top: 300px;
 	left: 270px;
 	border-spacing: 30px;
 	position: relative;
+}
+#typed{
+	top: 320px;
+	left: 270px;
+	border-spacing: 30px;
+	position: relative;
+}
+#words3{
+	border-collapse: separate;
+	top:15px;
+	left: 200px;
+	font-size: 17px;
+	text-align: center;
+	color:white;
+	border-spacing: 3px;
+	position: absolute;
+}
+#words4{
+	border-collapse: separate;
+	top:15px;
+	left: 380px;
+	font-size: 17px;
+	text-align: center;
+	color:white;
+	border-spacing: 3px;
+	position: absolute;
+}
+#words5{
+	border-collapse: separate;
+	top:15px;
+	left: 590px;
+	font-size: 17px;
+	text-align: center;
+	color:white;
+	border-spacing: 3px;
+	position: absolute;
+}
+#words6{
+	border-collapse: separate;
+	top:15px;
+	left: 830px;
+	font-size: 17px;
+	text-align: center;
+	color:white;
+	border-spacing: 3px;
+	position: absolute;
 }
 #start{
 	top: 550px;
@@ -47,3 +100,4 @@ td{
 	position: absolute;
 
 }
+

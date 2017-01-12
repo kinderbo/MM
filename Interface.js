@@ -1,10 +1,12 @@
 
-function random(){
+function random(id){
 
 	var i=0;
-	var letters=document.getElementById("random").rows[0];
-	for ( i=0; i< 5; i++){
+	var letters=document.getElementById(id).rows[0];
+	for ( i=0; i< 6; i++){
+
 		input = letters. insertCell(i);
+		input.style.width=50;
 		input.innerHTML="_";
 	}
 }
@@ -13,7 +15,7 @@ function random(){
 function typeLetters(e){
 	
 	var key = e.keyCode;
-	var letters = document.getElementById("random").rows[0].cells;
+	var letters = document.getElementById("typed").rows[0].cells;
 	var i = 0;
 	if(e.keyCode !==8){
 		while( letters[i].innerHTML !== "_"){
@@ -32,19 +34,23 @@ function typeLetters(e){
 
 	
 }
-function labelgenerate(number){
 
-	var letters = new Array(number);
-	for(var i=0;i<number;i++){
-		letters[i]=("_ _ _ "+"<br>");
+function wordsSupport(letters , words, id){
+	var letter = document.getElementById(id);
+	var i=0;
+	var j=0;
+
+	for( i = 0; i<words; i++){
+		
+		var row=letter.insertRow(i);
+		for(j=0; j<letters; j++){
+			
+			var word=row.insertCell(j);
+			word.style.background="#08195F";
+			word.style.width=13;
+			word.innerHTML="_";
 		}
-	return letters;
 
-}
-function myFunction(id){
-	document.getElementById(id).innerHTML="Paragraph changed";
-	var str=labelgenerate(3);
-	document.getElementById(id).innerHTML=str[0]+str[1]+str[2];
-
+	}
 }
 

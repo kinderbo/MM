@@ -1,38 +1,71 @@
 <html>
 <title>Word challenge</title>
 
-<head>
-	<link rel="stylesheet" href="Interface.css">
-</head>
+<head><link rel="stylesheet" href="Interface.css"></head>
 
 <script src="Interface.js"></script>
 
 <body>
+
+
 <div id="labels">
 	<label id="let"></label>
 </div>
 
-<div id="table">
-<table id="random" onkeypress="typeLetters(e)" >
-<tr>
-<td>_</td>
-</tr>
-</table>
+<div id="letters">
+	<table id="typed">
+		<tr id="input"></tr>
+	</table>
+
+	<table id= "random">
+		<tr id="output"></tr>
+	</table>
 </div>
 
-<script>random()</script>
+<div id="letters3">
+
+	<table id="words3"></table>
+	<script>wordsSupport(3, 12, "words3")</script>
+</div>
+
+<div id="letters4">
+	<table id="words4"></table>
+	<script>wordsSupport(4, 12, "words4")</script>
+</div>
+
+<div id="letters5">
+	<table id="words5"></table>
+	<script>wordsSupport(5, 12, "words5")</script>
+</div>
+
+<div id="letters6">
+	<table id="words6"></table>
+	<script>wordsSupport(6, 12, "words6")</script>
+</div>
+
+
+
+<script>random("typed")</script>
+<script>random("random")</script>
+
+
+<script>window.addEventListener("keyup", typeLetters, false)</script>
+
 
 <div id="start">
-<button onclick="myFunction('let')"> Start</button>
+	<button onclick="myFunction('let')"> Start</button>
 </div>
 
 <div id="new">
-<button onclick>New</button>
+	<button onclick>New</button>
 </div>
-<script>window.addEventListener("keyup", typeLetters, false)</script>
+
+
 <div id="shuffle">
-<button>Shuffle</button>
+	<button>Shuffle</button>
 </div>
+
+
 </body>
 
 
