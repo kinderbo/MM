@@ -7,6 +7,10 @@
 	<link rel="stylesheet" type="text/css" href="{% static 'css/Interface.css' %}" />
 	<script type="text/javascript" src="{% static 'js/jquery-3.1.1.min.js' %}"></script>
 	<script type="text/javascript" src="{% static 'js/Interface.js' %}"></script>
+	<!-- <script src="{% static 'images/snowflakes.jpg' %}"></script> -->
+	<!-- <link rel="stylesheet" type="text/css" href="/Users/Catalina/Documents/workspace/Projects/Fun-with-words/funwithwords/static/css/Interface.css" />
+	<script type="text/javascript" src="/Users/Catalina/Documents/workspace/Projects/Fun-with-words/funwithwords/static/js/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="/Users/Catalina/Documents/workspace/Projects/Fun-with-words/funwithwords/static/js/Interface.js"></script> -->
 
 </head>
 
@@ -29,38 +33,38 @@
 
 <div id="letters3">
 
-	<table id="words3"></table>
+	<table id="words3" class="words"></table>
 	<script>wordsSupport(3, 12, "words3")</script>
 </div>
 
 <div id="letters4">
-	<table id="words4"></table>
+	<table id="words4" class="words"></table>
 	<script>wordsSupport(4, 12, "words4")</script>
 </div>
 
 <div id="letters5">
-	<table id="words5"></table>
+	<table id="words5" class="words"></table>
 	<script>wordsSupport(5, 12, "words5")</script>
 </div>
 
 <div id="letters6">
-	<table id="words6"></table>
+	<table id="words6" class="words"></table>
 	<script>wordsSupport(6, 12, "words6")</script>
 </div>
 
 
 
 <div id="start">
-	<button onclick = "myFunction('let')"> Start</button>
+	<button id="start" class="buttons" onclick = "myFunction('let')"> Start</button>
 </div>
 
 <div id="new">
-	<button onclick>New</button>
+	<button id="new" class="buttons">New</button>
 </div>
 
 
 <div id="shuffle">
-	<button>Shuffle</button>
+	<button id="shuffle" class="buttons">Shuffle</button>
 </div>
 
 

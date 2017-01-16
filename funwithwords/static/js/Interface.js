@@ -1,5 +1,5 @@
 $(document).ready(function () {
-	window.addEventListener("keypress", typeLetters, false);
+	window.addEventListener("keydown", typeLetters, false);
 	random("typed");
 	random("random");
 });
@@ -23,15 +23,16 @@ function typeLetters(e) {
 			i++;
 		}
 		letters[i].innerHTML = String.fromCharCode(key);
+		letters[i].rotate(1);
 	}
 	else {
 		var i = 5;
 		while (letters[i].innerHTML === "_"){
 			i--;
 		}
-		if (i >= 0){
-			letters[i].innerHTML = "_";
-		}
+		if(i>=0){
+		letters[i].innerHTML = "_";
+	}
 	}
 }
 
@@ -45,7 +46,7 @@ function wordsSupport(letters, words, id) {
 		var row = letter.insertRow(i);
 		for (j = 0; j < letters; j++){
 			var word = row.insertCell(j);
-			word.style.background = "#08195F";
+			word.style.background = "#161981";
 			word.style.width = 13;
 			word.innerHTML = "_";
 		}
