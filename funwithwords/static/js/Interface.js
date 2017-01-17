@@ -2,6 +2,9 @@ $(document).ready(function () {
 	window.addEventListener("keydown", typeLetters, false);
 	random("typed");
 	random("random");
+	setInterval(timer, 1000);
+	// move();
+
 });
 
 function random(id){
@@ -23,7 +26,6 @@ function typeLetters(e) {
 			i++;
 		}
 		letters[i].innerHTML = String.fromCharCode(key);
-		letters[i].rotate(1);
 	}
 	else {
 		var i = 5;
@@ -52,3 +54,45 @@ function wordsSupport(letters, words, id) {
 		}
 	}
 }
+var count=120;
+function timer()
+{
+  count=count-1;
+	var t=convertTime(count);
+  if (count <= 0)
+  {
+     clearInterval(counter);
+     return;
+  }
+
+ document.getElementById("timer").innerHTML=t; // watch for spelling
+}
+function convertTime(seconds) {
+  var minutes = Math.floor(seconds/60);
+  var seconds = seconds - minutes * 60;
+	if(minutes<10){
+		minutes="0"+minutes;
+	}
+	if(seconds<10){
+		seconds="0"+seconds;
+	}
+  return  minutes + ':' + seconds;
+}
+
+// function move() {
+//   var elem = document.getElementById("timer");
+//   var width = 0;
+//   var id = setInterval(frame, 100);
+//   function frame() {
+//     if (width == 100) {
+//       clearInterval(id);
+//     }else if(width==70){
+// 			elem.style.background="#660033";
+// 			width++;
+//       elem.style.width = width + '%';
+// 		} else {
+//       width++;
+//       elem.style.width = width + '%';
+//     }
+//   }
+// }

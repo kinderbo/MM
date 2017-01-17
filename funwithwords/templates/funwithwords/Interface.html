@@ -13,8 +13,11 @@
 	<script type="text/javascript" src="/Users/Catalina/Documents/workspace/Projects/Fun-with-words/funwithwords/static/js/Interface.js"></script> -->
 
 </head>
+<audio autoplay loop>
+	<source src="{% static 'audio/pink_panther.mp3' %}" type="audio/mpeg">
+	</audio>
 
-<body>
+<body id="mainview">
 
 
 <div id="labels">
@@ -67,6 +70,10 @@
 	<button id="shuffle" class="buttons">Shuffle</button>
 </div>
 
+<div id="timer2">
+	<img id="panther" src="{% static 'images/panther2.gif' %}"></img>
+	<label id="timer"></label>
+</div>
 
 </body>
 
