@@ -2,17 +2,28 @@ $(document).ready(function () {
 	window.addEventListener("keydown", typeLetters, false);
 	random("typed");
 	random("random");
+
 	setInterval(timer, 1000);
 	// move();
 
+	display_key("sports");
+	// alert(six);
 });
 
+// This function creates 6 squares, each holding an underscore as a blank
 function random(id){
 	var letters = document.getElementById(id).rows[0];
 	for (i = 0; i < 6; i++) {
 		input = letters.insertCell(i);
 		input.style.width = 50;
 		input.innerHTML = "_";
+	}
+}
+
+function display_key(key) {
+	for (i = 0; i < 6; i++) {
+		id = "#random td:eq(" + i + ")";
+		$(id).html(key.charAt(i));
 	}
 }
 

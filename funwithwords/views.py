@@ -10,7 +10,11 @@ def index(request):
     # return HttpResponse(message)
 
 def mainview(request):
-    return render(request, 'funwithwords/Interface.html')
+    model = GameModel()
+    # request.session['model'] = model
+    key = model.curKey
+    context = {'key': key, 'three': model.three, 'four': model.four, 'five': model.five, 'six': model.six, 'model':model}
+    return render(request, 'funwithwords/Interface.html', context)
 
 def bonus(request):
     return render(request, 'funwithwords/BonusView.html')
