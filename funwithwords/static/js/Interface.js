@@ -14,6 +14,9 @@ $(document).ready(function () {
 	generate_labels_for_key(4, four.length, "words4","words42");
 	generate_labels_for_key(5, five.length, "words5","words52");
 	generate_labels_for_key(6, six.length, "words6","words62");
+
+	// Linking buttons
+	$('#new-button').click(shuffle_function);
 });
 
 
@@ -56,6 +59,7 @@ function typeLetters(e) {
 		key = key.replace(typed, "_");
 		display_key(key);
 	}
+
 	else if (e.keyCode === 8) { // backspace key
 		var i = 5;
 		while (i >= 0 && letters[i].innerHTML === "_") { // find the position of the character last typed
@@ -67,6 +71,10 @@ function typeLetters(e) {
 			display_key(key);
 			letters[i].innerHTML = "_";
 		}
+	}
+
+	else if (e.keyCode == 32) {
+		shuffle_function();
 	}
 }
 
@@ -135,10 +143,22 @@ function convertTime(seconds) {
   return minutes + ':' + seconds;
 }
 
-// TODO: Implement this function
 // This function randomly shuffles the key and displayed the new key on the screen.
-function shuffle_key() {
+function shuffle_function() {
+	key = shuffle_word(key);
+	display_key(key);
+}
 
+// This helper function shuffles the characters of a random word and return a new word
+function shuffle_word(word) {
+	var newkey = "";
+	var array = word.split("");
+	while (array.length > 0) {
+		var pos = Math.floor(Math.random() * (array.length));
+		newkey += array[pos];
+		array.splice(pos, 1);
+	}
+	return newkey;
 }
 
 // TODO: Implement this function
