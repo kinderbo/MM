@@ -12,7 +12,6 @@ def index(request):
 def mainview(request):
     model = GameModel()
     # request.session['model'] = model
-    # key = model.curKey
     context = {'key': model.curKey, 'three': model.three, 'four': model.four, 'five': model.five, 'six': model.six, 'model':model}
     return render(request, 'funwithwords/Interface.html', context)
 

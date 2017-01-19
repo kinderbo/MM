@@ -14,7 +14,7 @@
 
 </head>
 <audio autoplay loop>
-	<source src="{% static 'audio/pink_panther.mp3' %}" type="audio/mpeg">
+	<!-- <source src="{% static 'audio/pink_panther.mp3' %}" type="audio/mpeg"> -->
 	</audio>
 
 <body id="mainview">
@@ -36,23 +36,23 @@
 
 <div id="letters3">
 
-	<table id="words3" class="words"></table>
-	<script>wordsSupport(3, 12, "words3")</script>
+	<table id="words3" class = "words"></table>
+	<script>generate_labels_for_key(3, 12, "words3")</script>
 </div>
 
 <div id="letters4">
 	<table id="words4" class="words"></table>
-	<script>wordsSupport(4, 12, "words4")</script>
+	<script>generate_labels_for_key(4, 12, "words4")</script>
 </div>
 
 <div id="letters5">
 	<table id="words5" class="words"></table>
-	<script>wordsSupport(5, 12, "words5")</script>
+	<script>generate_labels_for_key(5, 12, "words5")</script>
 </div>
 
 <div id="letters6">
 	<table id="words6" class="words"></table>
-	<script>wordsSupport(6, 12, "words6")</script>
+	<script>generate_labels_for_key(6, 12, "words6")</script>
 </div>
 
 
@@ -71,17 +71,17 @@
 </div>
 
 
-<div id="timer2">
-	<img id="panther" src="{% static 'images/panther2.gif' %}"></img>
-	<label id="timer"></label>
+<div id = "timer2">
+	<img id = "panther" src = "{% static 'images/panther2.gif' %}"></img>
+	<label id = "timer"></label>
 </div>
 
-<script type="text/javascript">
-	var key = "{{ key }}";
-	var three = "{{three|safe}}"
-	var four = "{{four|safe}}"
-	var five = "{{five|safe}}"
-	var six = "{{six|safe}}"
+<script type = "text/javascript">
+	var key = "{{ key }} ";
+	var three = " {{three|safe}} "
+	var four = " {{four|safe}} "
+	var five = " {{five|safe}} "
+	var six = " {{six|safe}} "
 </script>
 
 </body>
