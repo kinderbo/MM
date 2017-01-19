@@ -5,7 +5,7 @@
 
 <head>
 	<link rel="stylesheet" type="text/css" href="{% static 'css/Interface.css' %}" />
-<link href='//fonts.googleapis.com/css?family=Mystery Quest' rel='stylesheet'>
+	<link href='//fonts.googleapis.com/css?family=Mystery Quest' rel='stylesheet'>
 	<script type="text/javascript" src="{% static 'js/jquery-3.1.1.min.js' %}"></script>
 	<script type="text/javascript" src="{% static 'js/Interface.js' %}"></script>
 	<!-- <script src="{% static 'images/snowflakes.jpg' %}"></script> -->
@@ -16,7 +16,17 @@
 </head>
 <audio autoplay loop>
 	<!-- <source src="{% static 'audio/pink_panther.mp3' %}" type="audio/mpeg"> -->
-	</audio>
+</audio>
+
+<script type = "text/javascript">
+	var key = "{{ key }}";
+
+	// These lists are sorted
+	var three = {{ three|safe }};
+	var four = {{ four|safe }};
+	var five = {{ five|safe }};
+	var six = {{ six|safe }};
+</script>
 
 <body id="mainview">
 <h1 id="logo2">Word Challenge</h1>
@@ -75,14 +85,6 @@
 	<img id = "panther" src = "{% static 'images/panther2.gif' %}"></img>
 	<label id = "timer"></label>
 </div>
-
-<script type = "text/javascript">
-	var key = "{{ key }} ";
-	var three = "{{ three|safe }}"
-	var four = "{{ four|safe }}"
-	var five = "{{ five|safe }}"
-	var six = "{{ six|safe }}"
-</script>
 
 </body>
 

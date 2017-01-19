@@ -1,6 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from .models import Words, GameModel
+import json
 
 
 def index(request):
@@ -12,7 +13,11 @@ def index(request):
 def mainview(request):
     model = GameModel()
     # request.session['model'] = model
-    context = {'key': model.curKey, 'three': model.three, 'four': model.four, 'five': model.five, 'six': model.six, 'model':model}
+    three = json.dumps(model.three)
+    four = json.dumps(model.four)
+    five = json.dumps(model.five)
+    six = json.dumps(model.six)
+    context = {'key': model.curKey, 'three': three, 'four': four, 'five': five, 'six': six, 'model': model}
     return render(request, 'funwithwords/Interface.html', context)
 
 def bonus(request):

@@ -1,0 +1,142 @@
+#mainview{
+	background-image: url('../images/galaxy.jpg');
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+
+#input{
+	border-collapse: separate;
+	background:#F9C7BF;
+	font-size: 40px;
+	text-align: center;
+	color:#660033;
+}
+
+#output{
+	border-collapse: separate;
+	background:#9999FF;
+	font-size: 40px;
+	text-align: center;
+	color:#660033;
+}
+
+#random{
+	top: 300px;
+	left: 270px;
+	border-spacing: 30px;
+	position: relative;
+}
+
+#typed{
+	top: 320px;
+	left: 270px;
+	border-spacing: 30px;
+	position: relative;
+}
+
+.words{
+	border-collapse: separate;
+	font-size: 17px;
+	text-align: center;
+	color:white;
+	border-spacing: 3px;
+	position: absolute;
+}
+
+#words3{
+	top:15px;
+	left: 200px;
+}
+
+#words4{
+	top:15px;
+	left: 380px;
+}
+
+#words5{
+	top:15px;
+	left: 590px;
+}
+
+#words6{
+	top:15px;
+	left: 830px;
+}
+.buttons{
+	width: 100px;
+	position: absolute;
+	background-color: #660033;
+	font-size:16;
+	color:#F9C7BF;
+}
+
+#start{
+	top: 550px;
+	left: 300px;
+}
+
+#new{
+	top: 550px;
+	left: 500px;
+}
+
+#shuffle{
+	top: 550px;
+	left: 700px;
+}
+
+#timer2{
+	top:300px;
+  left:950px;
+  position:absolute;
+}
+
+#timer {
+  background-color: #660033;
+	width:100px;
+	height:50px;
+	display: block;
+	 text-align: center;
+	 line-height: 200%;
+	 font-size: 25px;
+	color:#F9C7BF;
+  position: absolute;
+}
+
+#panther{
+	width:80px;
+	height:170px;
+	left:860px;
+}
+
+.startview{
+	background-color: #9999FF;
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+
+#startview{
+	background-image: url('../images/galaxy_start.jpg');
+	/*background-image: url('/Users/Catalina/Documents/workspace/Projects/Fun-with-words/funwithwords/static/images/snowflakes.jpg');*/
+	/*background-image: url("{% static 'images/snowflakes.jpg' %}");*/
+	background-repeat: no-repeat;
+	background-size: 100%;
+	background-color: black;
+}
+
+#enter{
+	background: url('../images/start-button.png');
+	background-size: 100%;
+	width:200px;
+	height:200px;
+	top:100px;
+	left:470px;
+	display:inline;
+	position: absolute;
+
+}
+/*#pantherstart{
+	top:100px;
+	left:500px;
+	position:absolute;
+}*/
