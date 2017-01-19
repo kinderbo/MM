@@ -5,6 +5,7 @@
 
 <head>
 	<link rel="stylesheet" type="text/css" href="{% static 'css/Interface.css' %}" />
+<link href='//fonts.googleapis.com/css?family=Mystery Quest' rel='stylesheet'>
 	<script type="text/javascript" src="{% static 'js/jquery-3.1.1.min.js' %}"></script>
 	<script type="text/javascript" src="{% static 'js/Interface.js' %}"></script>
 	<!-- <script src="{% static 'images/snowflakes.jpg' %}"></script> -->
@@ -18,7 +19,7 @@
 	</audio>
 
 <body id="mainview">
-
+<h1 id="logo2">Word Challenge</h1>
 
 <div id="labels">
 	<label id="let"></label>
@@ -35,7 +36,6 @@
 </div>
 
 <div id="letters3">
-
 	<table id="words3" class = "words"></table>
 	<script>generate_labels_for_key(3, 12, "words3")</script>
 </div>
@@ -78,10 +78,10 @@
 
 <script type = "text/javascript">
 	var key = "{{ key }} ";
-	var three = " {{three|safe}} "
-	var four = " {{four|safe}} "
-	var five = " {{five|safe}} "
-	var six = " {{six|safe}} "
+	var three = "{{ three|safe }}"
+	var four = "{{ four|safe }}"
+	var five = "{{ five|safe }}"
+	var six = "{{ six|safe }}"
 </script>
 
 </body>
