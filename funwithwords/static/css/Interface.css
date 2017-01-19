@@ -45,17 +45,16 @@
 	font-family: "Mystery Quest";
 	position:relative;
 	display:inline-flex;
-	margin-left: auto;
-	left:20px;
+	align-items: stretch;
 }
 
 #words{
 	margin-top: -200px;
-	margin-left: 300px;
-	align-content: flex-start;
+	position:fixed;
 	align-items: stretch;
-	position:relative;
 	display:inline-flex;
+	margin-left:20%;
+	margin-right:20%;
 }
 
 .buttons{

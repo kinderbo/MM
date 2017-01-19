@@ -72,9 +72,11 @@ function typeLetters(e) {
 			letters[i].innerHTML = "_";
 		}
 	}
-
 	else if (e.keyCode == 32) {
 		shuffle_function();
+	}
+	else if(e.keyCode == 13){
+		enter_words();
 	}
 }
 
@@ -160,7 +162,17 @@ function shuffle_word(word) {
 	}
 	return newkey;
 }
-
+function enter_words(){
+	var words = "";
+	var table = $('#typed')[0];
+	var letter = table.rows[0].cells;
+	var i = 0;
+	while (letter[i].innerHTML!=="_" && i<6){
+		words=words+letter[i].innerHTML;
+		i++;
+	}
+	return words;
+}
 // TODO: Implement this function
 // This function checks if the word played is valid and has not been played.
 // If so, the word is displayed on the screen, the score and the time will be increased accordingly.
