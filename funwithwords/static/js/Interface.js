@@ -5,10 +5,14 @@ $(document).ready(function () {
 
 	setInterval(timer, 1000);
 	// move();
-
-	display_key("sports");
+	display_key(key);
 	// alert(six);
 });
+var key = "{{ key }}";
+var three = "{{three|safe}}"
+var four = "{{four|safe}}"
+var five = "{{five|safe}}"
+var six = "{{six|safe}}"
 
 // This function creates 6 squares, each holding an underscore as a blank
 function random(id){
@@ -21,31 +25,36 @@ function random(id){
 }
 
 function display_key(key) {
+	var letters=document.getElementById("random").rows[0].cells;
 	for (i = 0; i < 6; i++) {
-		id = "#random td:eq(" + i + ")";
-		$(id).html(key.charAt(i));
+		letters[i].innerHTML=String(key[i]);
 	}
 }
 
 
 function typeLetters(e) {
-	var key = e.keyCode;
+	var typed = String.fromCharCode(e.keyCode);
+	typed=typed.toLowerCase();
 	var letters = document.getElementById("typed").rows[0].cells;
 	var i = 0;
-	if (e.keyCode !==8) {
+	if (key.includes(typed)) {
 		while (letters[i].innerHTML !== "_") {
 			i++;
 		}
-		letters[i].innerHTML = String.fromCharCode(key);
-	}
-	else {
+		letters[i].innerHTML = typed;
+		key=key.replace(typed,"_");
+		display_key(key);
+	}else if(e.keyCode === 8) {
 		var i = 5;
-		while (letters[i].innerHTML === "_"){
-			i--;
+		while (letters[i].innerHTML === "_" && i >= 0){
+			i = i-1;
 		}
-		if(i>=0){
-		letters[i].innerHTML = "_";
-	}
+		if(i >= 0){
+			var c =letters[i].innerHTML;
+				key = key.replace("_" ,c);
+				display_key(key);
+			letters[i].innerHTML = "_";
+		}
 	}
 }
 
