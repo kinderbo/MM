@@ -8,6 +8,10 @@ $(document).ready(function () {
 	create_labels("random"); // Create the labels that hold the key from the model
 	setInterval(timer, 1000);
 	display_key(key);
+	generate_labels_for_key(3, three.length, "words3","words32");
+	generate_labels_for_key(4, four.length, "words4","words42");
+	generate_labels_for_key(5, five.length, "words5","words52");
+	generate_labels_for_key(6, six.length, "words6","words62");
 });
 
 
@@ -65,12 +69,32 @@ function typeLetters(e) {
 }
 
 // Create the labels for the words depending on how many words can be formed from the key
-function generate_labels_for_key(letters, words, id) {
+function generate_labels_for_key(letters, words, id, id2) {
 	var letter = document.getElementById(id);
 	// var letter = $("#" + id);
 	var i = 0;
 	var j = 0;
-
+	if(words>12){
+	for (i = 0; i < 12; i++) {
+		var row = letter.insertRow(i); // TODO: see how to do this in jquery
+		for (j = 0; j < letters; j++) {
+			var word = row.insertCell(j);
+			word.style.background = "#161981"; // TODO: use constants to keep track of the colors
+			word.style.width = 13;
+			word.innerHTML = "_";
+		}
+	}
+	for(i=0;i<words-12;i++){
+		letter = document.getElementById(id2);
+		var row = letter.insertRow(i); // TODO: see how to do this in jquery
+		for (j = 0; j < letters; j++) {
+			var word = row.insertCell(j);
+			word.style.background = "#161981"; // TODO: use constants to keep track of the colors
+			word.style.width = 13;
+			word.innerHTML = "_";
+		}
+	}
+}else{
 	for (i = 0; i < words; i++) {
 		var row = letter.insertRow(i); // TODO: see how to do this in jquery
 		for (j = 0; j < letters; j++) {
@@ -80,6 +104,7 @@ function generate_labels_for_key(letters, words, id) {
 			word.innerHTML = "_";
 		}
 	}
+}
 }
 
 // This function operates the timer

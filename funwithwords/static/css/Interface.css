@@ -38,30 +38,30 @@
 	border-spacing: 30px;
 	position: relative;
 }
+
+
 .words{
 	border-collapse: separate;
 	font-size: 15px;
 	text-align: center;
 	color:white;
 	border-spacing: 3px;
-	position: absolute;
 	font-family: "Mystery Quest";
+	position:relative;
+	display:inline-flex;
+	margin-left: auto;
+	left:20px;
 }
-#words3{
-	top:15px;
-	left: 250px;
-}
-#words4{
-	top:15px;
-	left: 430px;
-}
-#words5{
-	top:15px;
-	left: 640px;
-}
-#words6{
-	top:15px;
-	left: 880px;
+
+#words{
+	margin-top: -200px;
+	margin-left: 300px;
+	align-content: flex-start;
+	align-items: stretch;
+	position:relative;
+	display:inline-flex;
+
+
 }
 .buttons{
 	width: 100px;
