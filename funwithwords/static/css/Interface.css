@@ -155,3 +155,17 @@
 	font-size:30px;
 	position:absolute;
 }
+#score{
+	left:100px;
+	top:470px;
+	background-color: rgba(66, 0,33, 0.6);
+	width:150px;
+	height:50px;
+	display: block;
+	text-align: center;
+	line-height: 200%;
+	font-size: 25px;
+	color:#F9C7BF;
+	position: absolute;
+	font-family: "Mystery Quest";
+}
