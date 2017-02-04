@@ -8,6 +8,16 @@ $(document).ready(function () {
 	create_labels("random"); // Create the labels that hold the key from the model
 	setInterval(timer, 1000);
 	display_key(key);
+	console.log(key);
+
+	// Generate labels
+	generate_labels_for_key(3, three.length, "words3","words32");
+	generate_labels_for_key(4, four.length, "words4","words42");
+	generate_labels_for_key(5, five.length, "words5","words52");
+	generate_labels_for_key(6, six.length, "words6","words62");
+
+	// Linking buttons
+	$('#new-button').click(shuffle_function);
 });
 
 
@@ -50,6 +60,7 @@ function typeLetters(e) {
 		key = key.replace(typed, "_");
 		display_key(key);
 	}
+
 	else if (e.keyCode === 8) { // backspace key
 		var i = 5;
 		while (i >= 0 && letters[i].innerHTML === "_") { // find the position of the character last typed
@@ -62,22 +73,49 @@ function typeLetters(e) {
 			letters[i].innerHTML = "_";
 		}
 	}
+
+	else if (e.keyCode == 32) {
+		shuffle_function();
+	}
 }
 
 // Create the labels for the words depending on how many words can be formed from the key
-function generate_labels_for_key(letters, words, id) {
+function generate_labels_for_key(letters, words, id, id2) {
 	var letter = document.getElementById(id);
 	// var letter = $("#" + id);
 	var i = 0;
 	var j = 0;
+	if (words > 12){
+		for (i = 0; i < 12; i++) {
+			var row = letter.insertRow(i); // TODO: see how to do this in jquery
+			for (j = 0; j < letters; j++) {
+				var word = row.insertCell(j);
+				word.style.background = "#161981"; // TODO: use constants to keep track of the colors
+				word.style.width = 13;
+				word.innerHTML = "_";
+			}
+		}
 
-	for (i = 0; i < words; i++) {
-		var row = letter.insertRow(i); // TODO: see how to do this in jquery
-		for (j = 0; j < letters; j++) {
-			var word = row.insertCell(j);
-			word.style.background = "#161981"; // TODO: use constants to keep track of the colors
-			word.style.width = 13;
-			word.innerHTML = "_";
+		for (i = 0; i < words - 12; i++) {
+			letter = document.getElementById(id2);
+			var row = letter.insertRow(i); // TODO: see how to do this in jquery
+			for (j = 0; j < letters; j++) {
+				var word = row.insertCell(j);
+				word.style.background = "#161981"; // TODO: use constants to keep track of the colors
+				word.style.width = 13;
+				word.innerHTML = "_";
+			}
+		}
+	}
+	else {
+		for (i = 0; i < words; i++) {
+			var row = letter.insertRow(i); // TODO: see how to do this in jquery
+			for (j = 0; j < letters; j++) {
+				var word = row.insertCell(j);
+				word.style.background = "#161981"; // TODO: use constants to keep track of the colors
+				word.style.width = 13;
+				word.innerHTML = "_";
+			}
 		}
 	}
 }
@@ -106,10 +144,22 @@ function convertTime(seconds) {
   return minutes + ':' + seconds;
 }
 
-// TODO: Implement this function
 // This function randomly shuffles the key and displayed the new key on the screen.
-function shuffle_key() {
+function shuffle_function() {
+	key = shuffle_word(key);
+	display_key(key);
+}
 
+// This helper function shuffles the characters of a random word and return a new word
+function shuffle_word(word) {
+	var newkey = "";
+	var array = word.split("");
+	while (array.length > 0) {
+		var pos = Math.floor(Math.random() * (array.length));
+		newkey += array[pos];
+		array.splice(pos, 1);
+	}
+	return newkey;
 }
 
 // TODO: Implement this function
@@ -136,6 +186,7 @@ function increase_score(amount) {
 
 // TODO: Implement this function
 // This function increases the player's time by the specified amount
+// and update the timer to show the new time
 function increase_time(amount) {
 
 }

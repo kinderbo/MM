@@ -8,6 +8,7 @@ $(document).ready(function () {
 	create_labels("random"); // Create the labels that hold the key from the model
 	setInterval(timer, 1000);
 	display_key(key);
+	console.log(key);
 
 	// Generate labels
 	generate_labels_for_key(3, three.length, "words3","words32");
@@ -72,11 +73,9 @@ function typeLetters(e) {
 			letters[i].innerHTML = "_";
 		}
 	}
+
 	else if (e.keyCode == 32) {
 		shuffle_function();
-	}
-	else if(e.keyCode == 13){
-		enter_words();
 	}
 }
 
@@ -86,7 +85,7 @@ function generate_labels_for_key(letters, words, id, id2) {
 	// var letter = $("#" + id);
 	var i = 0;
 	var j = 0;
-	if(words > 12){
+	if (words > 12){
 		for (i = 0; i < 12; i++) {
 			var row = letter.insertRow(i); // TODO: see how to do this in jquery
 			for (j = 0; j < letters; j++) {
@@ -97,7 +96,7 @@ function generate_labels_for_key(letters, words, id, id2) {
 			}
 		}
 
-		for (i = 0; i < words - 12; i++){
+		for (i = 0; i < words - 12; i++) {
 			letter = document.getElementById(id2);
 			var row = letter.insertRow(i); // TODO: see how to do this in jquery
 			for (j = 0; j < letters; j++) {
@@ -162,17 +161,7 @@ function shuffle_word(word) {
 	}
 	return newkey;
 }
-function enter_words(){
-	var words = "";
-	var table = $('#typed')[0];
-	var letter = table.rows[0].cells;
-	var i = 0;
-	while (letter[i].innerHTML!=="_" && i<6){
-		words=words+letter[i].innerHTML;
-		i++;
-	}
-	return words;
-}
+
 // TODO: Implement this function
 // This function checks if the word played is valid and has not been played.
 // If so, the word is displayed on the screen, the score and the time will be increased accordingly.
@@ -197,6 +186,7 @@ function increase_score(amount) {
 
 // TODO: Implement this function
 // This function increases the player's time by the specified amount
+// and update the timer to show the new time
 function increase_time(amount) {
 
 }
