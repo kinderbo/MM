@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'mod_wsgi.server',
     'funwithwords'
 ]
 
@@ -78,21 +79,12 @@ WSGI_APPLICATION = 'WordChallenge.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'funwithwords',
-        'USER': 'nguyenla',
-        'PASSWORD': 'dhc136Ln',
+        'HOST': 'db',
+        'NAME': os.environ.get('MARIADB_DATABASE'),
+        'USER': os.environ.get('MARIADB_USER'),
+        'PASSWORD': os.environ.get('MARIADB_PASSWORD'),
     }
 }
-
-# In the flexible environment, you connect to CloudSQL using a unix socket.
-# Locally, you can use the CloudSQL proxy to proxy a localhost connection
-# to the instance
-DATABASES['default']['HOST'] = '/cloudsql/fun-with-words:us-central1:instance1'
-if os.getenv('GAE_INSTANCE'):
-    pass
-else:
-    DATABASES['default']['HOST'] = '127.0.0.1'
-# [END dbconfig]
 
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators

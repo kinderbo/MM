@@ -1,0 +1,3 @@
+sast:
+  image: aquasec/trivy:latest
+  script: trivy fs --exit-code=1 .

@@ -1,0 +1,21 @@
+version: '3'
+services:
+  db:
+    env_file:
+      - .env
+    image: mariadb:10
+    volumes:
+    - mysql-data:/var/lib/mysql
+  web:
+    build: .
+    deploy:
+      restart_policy:
+        condition: on-failure
+    depends_on:
+      - db
+    env_file:
+      - .env
+    ports:
+      - 8000:8000
+volumes:
+  mysql-data:
